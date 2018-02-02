@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tickets" ng-controller="appCtrl as appCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script rel="script" src="../bower_components/angular/angular.min.js"></script>
+    <script rel="script" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script rel="script" src="../app/app.js"></script>
+    <script rel="script" src="../app/routes.js"></script>
+    <script rel="script" src="../app/appCtrl.js"></script>
+    <style type="text/css">
+        @media print {
+            #view-panel {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="view-panel">
+        <h2>Print tickets {{1+1}}</h2>
+        <button ng-click="appCtrl.getPnr()">Click</button>
+        <button ng-click="appCtrl.printTicket()">Print</button>
+
+    </div>
+
+    <ui-view></ui-view>
+</body>
+</html>
