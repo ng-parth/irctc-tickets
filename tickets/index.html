@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--<link rel="stylesheet" href="../app/foundation.min.css" />-->
+    <link rel="stylesheet" href="../app/app.css" />
     <script rel="script" src="../bower_components/angular/angular.min.js"></script>
     <script rel="script" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script rel="script" src="../app/app.js"></script>
     <script rel="script" src="../app/routes.js"></script>
     <script rel="script" src="../app/appCtrl.js"></script>
+    <script rel="script" src="../app/irctcForm.directive.js"></script>
     <style type="text/css">
-        @media print {
-            #view-panel {
-                display: none;
-            }
-        }
+
     </style>
 </head>
 <body>
     <div id="view-panel">
-        <h2>Print tickets {{1+1}}</h2>
-        <button ng-click="appCtrl.getPnr()">Click</button>
+        <h2>Print tickets {{23+1}}</h2>
+        <!--<irctc-form ticket-details="appCtrl.ticketDetails"></irctc-form>-->
+        <div ng-include="'../app/irctcForm.directive.html'"></div>
+        <button ng-click="appCtrl.updateTicket()">Update ticket</button>
         <button ng-click="appCtrl.printTicket()">Print</button>
 
     </div>

@@ -3,7 +3,8 @@ angular.module('tickets')
         $stateProvider.state('ticket', {
                 url: '/ticket/:id',
                 templateUrl: function(params) {
-                    return './' + params.id + '.htm';
+                    if (params.id < 20) return './' + params.id + '.htm';
+                    else return './' + params.id + '.html';
                 }
             }
         );

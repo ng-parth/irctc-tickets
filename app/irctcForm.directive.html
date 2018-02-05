@@ -1,0 +1,9 @@
+<form>
+<h3>Irctc edit form</h3>
+    <div ng-repeat="(key, value) in appCtrl.ticketDetails">
+        <div ng-show="key !== 'passengerList'">
+            <span ng-bind="key | uppercase"></span>
+            <span><input type="text" ng-model="value[2]" style="width: 70%;"/></span>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,2179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css" nonce="">
+        body, td, div, p, a, input {
+            font-family: arial, sans-serif;
+        }
+    </style>
+    <style type="text/css" nonce="">
+        body, td {
+            font-size: 13px
+        }
+
+        a:link, a:active {
+            color: #1155CC;
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline;
+            cursor: pointer
+        }
+
+        a:visited {
+            color: # #6611CC
+        }
+
+        img {
+            border: 0px
+        }
+
+        pre {
+            white-space: pre;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-width: 800px;
+            overflow: auto;
+        }
+
+        .logo {
+            left: -7px;
+            position: relative;
+        }
+    </style>
+    <style></style>
+    <style id="inboxsdk__shared_style">.inboxsdk__notransition {
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
+    }
+
+    .inboxsdk__close_button {
+        height: 24px;
+        width: 24px;
+        opacity: .7;
+        position: relative;
+        background: none;
+        border: none;
+        padding: 0;
+        box-sizing: content-box;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .inboxsdk__close_button:focus, .inboxsdk__close_button:hover {
+        opacity: 1;
+    }
+
+    .inboxsdk__close_button:focus::before {
+        background-color: rgba(0, 0, 0, .12);
+    }
+
+    .inboxsdk__close_button::before {
+        border-radius: 50%;
+        position: absolute;
+        top: -4px;
+        bottom: -4px;
+        left: -4px;
+        right: -4px;
+        padding: 4px;
+        content: ' ';
+    }
+
+    .inboxsdk__close_button::after {
+        content: ' ';
+        background: url(https://www.gstatic.com/images/icons/material/system/1x/close_black_24dp.png);
+        position: absolute;
+        height: 24px;
+        width: 24px;
+        top: 0;
+        left: 0;
+    }
+
+    .DHfJaCaEbafeFEaB {
+        display: none;
+    }
+
+    /* drawer */
+
+    .inboxsdk__drawer_view_container {
+        visibility: visible;
+        direction: initial;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        bottom: 0;
+        left: 0;
+        z-index: 51;
+        pointer-events: none;
+    }
+
+    .inboxsdk__drawer_view {
+        position: absolute;
+        pointer-events: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 452px;
+        font: normal normal normal normal 13px / normal "Helvetica Neue", Helvetica, Arial, sans-serif;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        background-color: #fff;
+        outline: none;
+        box-shadow: 0 0 8px rgba(0, 0, 0, .18), 0 8px 16px rgba(0, 0, 0, .36);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        transition: transform 150ms cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .inboxsdk__drawer_view.inboxsdk__active {
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    .inboxsdk__drawer_title_bar {
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 16px 20px;
+        white-space: nowrap;
+        display: -webkit-flex;
+        display: flex;
+        flex: 0 0 auto;
+        -webkit-flex: 0 0 auto;
+    }
+
+    .inboxsdk__drawer_title_bar .inboxsdk__close_button {
+        margin-right: 20px;
+        -webkit-flex-shrink: 0;
+        flex-shrink: 0;
+    }
+
+    .inboxsdk__drawer_title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font: normal normal normal normal 20px / 24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    /* backdrop */
+
+    .inboxsdk__inbox_backdrop {
+        visibility: visible;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        bottom: 0;
+        left: 0;
+        z-index: 50;
+        background-color: transparent;
+        transition: background-color 150ms cubic-bezier(0.4, 0, 1, 1);
+    }
+
+    .inboxsdk__inbox_backdrop.inboxsdk__active {
+        background-color: rgba(10, 10, 10, .6);
+        transition: background-color 70ms cubic-bezier(0, 0, .2, 1);
+    }
+
+    .inboxsdk__inbox_backdrop ~ .inboxsdk__inbox_backdrop {
+        opacity: 0.6;
+    }
+
+    /* sidebar */
+
+    .CcCcJDJEbGBFfdcF {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .EbHIfcefDecBdAGe > .inboxsdk__close_button {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+    }
+
+    .FdBAGfAbefEeacJA {
+        width: 216px;
+    }
+
+    .JeDHfcJFHbDacdIJ {
+        overflow: hidden;
+        font: 12px Arial, sans-serif;
+        max-height: 100%;
+        box-sizing: border-box;
+    }
+
+    .AbfdJbbcCBaBFbBd {
+        white-space: nowrap;
+        display: -webkit-flex;
+        display: flex;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+        cursor: default;
+    }
+
+    .JeDHfcJFHbDacdIJ:not(.EfJeCAdFACJfEDJD) .AbfdJbbcCBaBFbBd {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .JeDHfcJFHbDacdIJ.eGEfHfJFIAGABdeb .AbfdJbbcCBaBFbBd:hover,
+    .JeDHfcJFHbDacdIJ.GJHfAIaDDHeJcaAD .AbfdJbbcCBaBFbBd {
+        background: rgba(0, 0, 0, .03);
+    }
+
+    .bDHCEcbDFHbBCBcC {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .JeDHfcJFHbDacdIJ.eGEfHfJFIAGABdeb .bDHCEcbDFHbBCBcC {
+        cursor: move;
+    }
+
+    .FBAbeaJHbebHFDcI {
+        padding-left: 6px;
+        vertical-align: middle;
+        font: bold 13px / 40px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: rgba(0, 0, 0, 0.87);
+    }
+
+    .EbHIfcefDecBdAGe.fHFEHCaEHHDIFfdC .AbfdJbbcCBaBFbBd {
+        display: none;
+    }
+
+    .JeDHfcJFHbDacdIJ.eGEfHfJFIAGABdeb .AbfdJbbcCBaBFbBd:hover .AfAcBDDJGaGFFfeJ {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 10px;
+        height: 40px;
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSI2cHgiIGhlaWdodD0iMTJweCIgdmlld0JveD0iMCAwIDYgMTIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+Q29tYmluZWQgU2hhcGU8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGRlZnM+PC9kZWZzPiAgICA8ZyBpZD0iRkluYWxzLSoqSmFuLTkqKiIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0iU2lkZWJhci1jbG9zZWQtQ29weSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIC0xNC4wMDAwMDApIiBmaWxsPSIjQUFBQUFBIj4gICAgICAgICAgICA8ZyBpZD0iU2lkZWJhciIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwLjAwMDAwMCwgMC4wMDAwMDApIj4gICAgICAgICAgICAgICAgPGcgaWQ9IkJveC1pbmZvLUNvcHkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwLjAwMDAwMCwgMC4wMDAwMDApIj4gICAgICAgICAgICAgICAgICAgIDxnIGlkPSJHcmlwcHkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCAxNC41MDAwMDApIj4gICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMC42NjY2NjY2NjcsNS40MTY2NjY2NyBDMC42NjY2NjY2NjcsNC44NjQzODE5MiAxLjExMDUzMTQ5LDQuNDE2NjY2NjcgMS42NjY2NjY2Nyw0LjQxNjY2NjY3IEMyLjIxODk1MTQyLDQuNDE2NjY2NjcgMi42NjY2NjY2Nyw0Ljg2MDUzMTQ5IDIuNjY2NjY2NjcsNS40MTY2NjY2NyBDMi42NjY2NjY2Nyw1Ljk2ODk1MTQyIDIuMjIyODAxODQsNi40MTY2NjY2NyAxLjY2NjY2NjY3LDYuNDE2NjY2NjcgQzEuMTE0MzgxOTIsNi40MTY2NjY2NyAwLjY2NjY2NjY2Nyw1Ljk3MjgwMTg0IDAuNjY2NjY2NjY3LDUuNDE2NjY2NjcgWiBNMC42NjY2NjY2NjcsMS4yNSBDMC42NjY2NjY2NjcsMC42OTc3MTUyNSAxLjExMDUzMTQ5LDAuMjUgMS42NjY2NjY2NywwLjI1IEMyLjIxODk1MTQyLDAuMjUgMi42NjY2NjY2NywwLjY5Mzg2NDgyMiAyLjY2NjY2NjY3LDEuMjUgQzIuNjY2NjY2NjcsMS44MDIyODQ3NSAyLjIyMjgwMTg0LDIuMjUgMS42NjY2NjY2NywyLjI1IEMxLjExNDM4MTkyLDIuMjUgMC42NjY2NjY2NjcsMS44MDYxMzUxOCAwLjY2NjY2NjY2NywxLjI1IFogTTAuNjY2NjY2NjY3LDkuNTgzMzMzMzMgQzAuNjY2NjY2NjY3LDkuMDMxMDQ4NTggMS4xMTA1MzE0OSw4LjU4MzMzMzMzIDEuNjY2NjY2NjcsOC41ODMzMzMzMyBDMi4yMTg5NTE0Miw4LjU4MzMzMzMzIDIuNjY2NjY2NjcsOS4wMjcxOTgxNiAyLjY2NjY2NjY3LDkuNTgzMzMzMzMgQzIuNjY2NjY2NjcsMTAuMTM1NjE4MSAyLjIyMjgwMTg0LDEwLjU4MzMzMzMgMS42NjY2NjY2NywxMC41ODMzMzMzIEMxLjExNDM4MTkyLDEwLjU4MzMzMzMgMC42NjY2NjY2NjcsMTAuMTM5NDY4NSAwLjY2NjY2NjY2Nyw5LjU4MzMzMzMzIFogTTMuMzAwMDAwMTksMS4yNSBDMy4zMDAwMDAxOSwwLjY5NzcxNTI1IDMuNzQzODY1MDEsMC4yNSA0LjMwMDAwMDE5LDAuMjUgQzQuODUyMjg0OTQsMC4yNSA1LjMwMDAwMDE5LDAuNjkzODY0ODIyIDUuMzAwMDAwMTksMS4yNSBDNS4zMDAwMDAxOSwxLjgwMjI4NDc1IDQuODU2MTM1MzcsMi4yNSA0LjMwMDAwMDE5LDIuMjUgQzMuNzQ3NzE1NDQsMi4yNSAzLjMwMDAwMDE5LDEuODA2MTM1MTggMy4zMDAwMDAxOSwxLjI1IFogTTMuMzAwMDAwMTksNS40MTY2NjY2NyBDMy4zMDAwMDAxOSw0Ljg2NDM4MTkyIDMuNzQzODY1MDEsNC40MTY2NjY2NyA0LjMwMDAwMDE5LDQuNDE2NjY2NjcgQzQuODUyMjg0OTQsNC40MTY2NjY2NyA1LjMwMDAwMDE5LDQuODYwNTMxNDkgNS4zMDAwMDAxOSw1LjQxNjY2NjY3IEM1LjMwMDAwMDE5LDUuOTY4OTUxNDIgNC44NTYxMzUzNyw2LjQxNjY2NjY3IDQuMzAwMDAwMTksNi40MTY2NjY2NyBDMy43NDc3MTU0NCw2LjQxNjY2NjY3IDMuMzAwMDAwMTksNS45NzI4MDE4NCAzLjMwMDAwMDE5LDUuNDE2NjY2NjcgWiBNMy4zMDAwMDAxOSw5LjU4MzMzMzMzIEMzLjMwMDAwMDE5LDkuMDMxMDQ4NTggMy43NDM4NjUwMSw4LjU4MzMzMzMzIDQuMzAwMDAwMTksOC41ODMzMzMzMyBDNC44NTIyODQ5NCw4LjU4MzMzMzMzIDUuMzAwMDAwMTksOS4wMjcxOTgxNiA1LjMwMDAwMDE5LDkuNTgzMzMzMzMgQzUuMzAwMDAwMTksMTAuMTM1NjE4MSA0Ljg1NjEzNTM3LDEwLjU4MzMzMzMgNC4zMDAwMDAxOSwxMC41ODMzMzMzIEMzLjc0NzcxNTQ0LDEwLjU4MzMzMzMgMy4zMDAwMDAxOSwxMC4xMzk0Njg1IDMuMzAwMDAwMTksOS41ODMzMzMzMyBaIiBpZD0iQ29tYmluZWQtU2hhcGUiPjwvcGF0aD4gICAgICAgICAgICAgICAgICAgIDwvZz4gICAgICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDwvZz4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==) 50% center no-repeat;
+    }
+
+    .eIJCCeaIGIBIDcff {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-left: 6px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -1px;
+    }
+
+    .cJcafIAHbdAJFJIa,
+    .cJcafIAHbdAJFJIa > img {
+        width: 13px;
+        height: 13px;
+    }
+
+    .CHEabGEIBICHBede {
+        -webkit-flex: 1;
+        flex: 1;
+        text-align: right;
+        visibility: hidden;
+    }
+
+    .JeDHfcJFHbDacdIJ.eGEfHfJFIAGABdeb .CHEabGEIBICHBede {
+        visibility: visible;
+        cursor: pointer;
+    }
+
+    .AFafEEBJBDcAEIHG {
+        margin-top: 12px;
+        margin-right: 4px;
+        background: url(https://www.streak.com/build/images/arrowDown.png) center / 20px no-repeat;
+        border: none;
+        width: 14px;
+        height: 14px;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        transition: -webkit-transform .15s, transform .15s;
+        outline: none;
+        opacity: .6;
+        cursor: pointer;
+    }
+
+    .AbfdJbbcCBaBFbBd:hover .AFafEEBJBDcAEIHG,
+    .JeDHfcJFHbDacdIJ.GJHfAIaDDHeJcaAD .AbfdJbbcCBaBFbBd .AFafEEBJBDcAEIHG {
+        opacity: .9;
+    }
+
+    .JeDHfcJFHbDacdIJ.EfJeCAdFACJfEDJD .AFafEEBJBDcAEIHG {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    .CfbfecIAcBcceCeI {
+        margin-bottom: 25px;
+    }
+
+    .GaaJHIeICADdFbec .GbeDfabEcCDDJJJA {
+        position: relative;
+    }
+
+    .GaaJHIeICADdFbec .inboxsdk__button_icon:focus,
+    .GaaJHIeICADdFbec .inboxsdk__button_icon:hover {
+        outline: none;
+    }
+
+    /* end sidebar */
+
+    /* shared parts of app id warning */
+
+    .inboxsdk__appid_warning {
+        margin: 0;
+        padding: 9px;
+        color: #4b4b4b;
+        background: #ff6c6c;
+        font-size: 10pt;
+    }
+
+    .inboxsdk__appid_warning_main {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .inboxsdk__appid_warning .topline {
+        font-weight: bold;
+        font-size: 11pt;
+    }
+
+    a.inboxsdk__appid_register {
+        color: white;
+        display: inline-block;
+        background: #1989ff;
+        border-radius: 3px;
+        text-decoration: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        padding: 7px;
+        font-size: 10pt;
+        vertical-align: middle;
+        margin-left: 1em;
+    }
+
+    .inboxsdk__thread_row_icon_wrapper {
+        display: inline-block;
+    }
+
+    .inboxsdk__thread_row_icon_wrapper .inboxsdk__button_iconImg {
+        margin-top: 0px;
+    }
+
+    .JGacIfEIIbIEHADF {
+        background: #f8ebc0;
+        margin-bottom: 10px;
+        padding: 12px 4px 6px 12px;
+    }
+    </style>
+    <style id="inboxsdk__style">/* suggestions */
+
+    .inboxsdk__suggestions_separator_before {
+        padding-bottom: 2px !important;
+    }
+
+    .inboxsdk__suggestions_separator_after {
+        border-top: 1px solid #e5e5e5;
+        padding-top: 2px !important;
+    }
+
+    /* buttons */
+
+    div.T-I.inboxsdk__button {
+        -webkit-user-select: none;
+        min-width: 27px;
+    }
+
+    .inboxsdk__no_bg {
+        background: none;
+    }
+
+    .inboxsdk__button.inboxsdk__button_disabled {
+        opacity: 0.55;
+    }
+
+    .inboxsdk__button_icon + .inboxsdk__button_text {
+        margin-left: 5px;
+    }
+
+    .inboxsdk__button_icon {
+        display: inline-block;
+    }
+
+    .inboxsdk__button_iconImg {
+        height: 16px;
+        width: 16px;
+        vertical-align: middle;
+        margin-top: -2px;
+        user-drag: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+    }
+
+    .inboxsdk__button_green_inactive {
+        -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+        box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+        background-color: #53a93f;
+        background-image: -webkit-linear-gradient(top, transparent, transparent);
+        background-image: linear-gradient(top, transparent, transparent);
+        border: 1px solid transparent;
+        color: #fff;
+        text-shadow: none;
+    }
+
+    .inboxsdk__button_green_hover {
+        -webkit-box-shadow: inset 0 -1px 0 #4c8534;
+        box-shadow: inset 0 -1px 0 #4c8534;
+        background-color: #65b045;
+        background-image: -webkit-linear-gradient(top, transparent, transparent);
+        background-image: linear-gradient(top, transparent, transparent);
+        border: 1px solid transparent;
+        border-bottom: 1px solid #4c8534;
+        text-shadow: none;
+    }
+
+    .inboxsdk__button_green_active {
+        -webkit-box-shadow: inset 0 1px 0 #2f6124;
+        box-shadow: inset 0 1px 0 #2f6124;
+        background: #3e802f;
+        border: 1px solid transparent;
+        border-top: 1px solid #2f6124;
+        color: #fff;
+        text-shadow: none;
+    }
+
+    .inboxsdk__menu {
+        min-width: 1em;
+        min-height: 1em;
+        padding: 0px;
+        overflow: visible;
+        max-height: none;
+
+        /* Copied from Gmail's .J-M class */
+        z-index: 7;
+        cursor: default;
+        font-size: 13px;
+        margin: 0;
+        outline: none;
+    }
+
+    .inboxsdk__menu > .inboxsdk__menuContent {
+        padding: 0;
+        -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        -webkit-transition: opacity .218s;
+        transition: opacity .218s;
+        border: 1px solid rgba(0, 0, 0, .2);
+        background: #fff;
+    }
+
+    .f4.J-N-JX.inboxsdk__message_more_icon {
+        margin-top: -1px;
+        width: 16px;
+        height: 16px;
+    }
+
+    /* end */
+
+    /* compose buttons */
+
+    /* in material Gmail reduce padding between buttons  */
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__sdk_compose_withButtons .gU:not(:first-child) {
+        padding-left: 15px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__sdk_compose_withButtons .inboxsdk__compose_actionToolbar div.inboxsdk__button:first-child {
+        margin-right: 0px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__sdk_compose_withButtons .wG:not(:first-child) {
+        margin-left: 15px;
+    }
+
+    .T-I.inboxsdk__button.inboxsdk__compose_sendButton {
+        min-width: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+        padding: 0px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .T-I.inboxsdk__button.inboxsdk__compose_sendButton {
+        margin-left: -6px;
+        min-width: 27px;
+    }
+
+    .T-I.inboxsdk__button.inboxsdk__compose_sendButton > div {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inboxsdk__compose_actionToolbar {
+        white-space: nowrap;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__compose_actionToolbar {
+        padding: 0px 0px 0px 5px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__compose_actionToolbar div.inboxsdk__button {
+        width: 20px;
+        max-width: 20px;
+        min-width: 20px;
+        height: 20px;
+        margin-top: -2px;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__compose_actionToolbar div.inboxsdk__button {
+        min-width: 27px;
+        height: 27px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__compose_actionToolbar div.inboxsdk__button + div.inboxsdk__button {
+        margin-right: 0px;
+        margin-left: 15px;
+    }
+
+    .inboxsdk__compose_actionToolbar .inboxsdk__button_icon {
+        height: 17px;
+        width: 17px;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        margin-top: 2px;
+    }
+
+    .inboxsdk__compose_actionToolbar .inboxsdk__button_iconImg {
+        vertical-align: top;
+        height: 17px;
+        width: 17px;
+        display: inline-block;
+        margin-top: -1px;
+    }
+
+    .inboxsdk__compose_actionToolbar .inboxsdk__button > div {
+        opacity: 0.55;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__compose_actionToolbar .inboxsdk__button:focus {
+        border: 1px solid #4d90fe;
+        outline: none;
+    }
+
+    .inboxsdk__compose_actionToolbar .inboxsdk__button.inboxsdk__button_hover > div, .inboxsdk__compose_actionToolbar .inboxsdk__button:focus > div {
+        opacity: 1
+    }
+
+    .inboxsdk__compose_groupedActionToolbar_visible .aDg .aDh {
+        overflow-y: visible;
+    }
+
+    .inboxsdk__compose_groupedActionToolbar {
+        position: absolute;
+        bottom: 44px;
+        margin: 3px;
+        z-index: 10;
+        left: 0px;
+        border-radius: 2px;
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+        padding: 5px 15px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__compose_groupedActionToolbar .inboxsdk__button:first-child {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__compose_groupedActionButton {
+        margin-right: 0px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__compose_groupedActionToolbar .btC .J-Z-I::before,
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__compose_groupedActionButton::before {
+        bottom: -3px;
+        left: -3px;
+        right: -3px;
+        top: -3px;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__compose_groupedActionToolbar {
+        background: #f5f5f5;
+        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+        border: 1px solid #cfcfcf;
+        padding: 1px !important;
+    }
+
+    .inboxsdk__compose_groupedActionToolbar div.inboxsdk__button {
+        z-index: 1;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__compose_groupedActionToolbar div.inboxsdk__button {
+        margin-right: 0px;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__compose_groupedActionToolbar_arrow {
+        position: absolute;
+        background: url('https://ssl.gstatic.com/ui/v1/icons/mail/down_pointer.png') no-repeat;
+        width: 17px;
+        height: 18px;
+        bottom: -16px;
+        margin-left: 4px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__compose_groupedActionToolbar_arrow {
+        display: none;
+    }
+
+    .inboxsdk__compose_customSendContainer {
+        display: inline-block;
+        position: relative;
+        outline: 0;
+        height: 29px;
+        margin: 6px 0;
+        padding: 0;
+        line-height: 29px;
+        vertical-align: middle;
+    }
+
+    .inboxsdk__compose_customTitleBarColor > img.Hl,
+    .inboxsdk__compose_customTitleBarColor > img.Hq,
+    .inboxsdk__compose_customTitleBarColor > img.Ha {
+        background-color: transparent !important;
+    }
+
+    .inboxsdk__compose_hasCustomTitleBarText,
+    .inboxsdk__compose_hasCustomTitleBarText > tbody > tr {
+        display: -webkit-flex;
+        display: flex;
+    }
+
+    .inboxsdk__compose_hasCustomTitleBarText > tbody > tr {
+        align-items: center;
+    }
+
+    .inboxsdk__compose_hasCustomTitleBarText > tbody {
+        width: 100%;
+    }
+
+    .inboxsdk__compose_nativeTitleBarText {
+        display: none !important;
+    }
+
+    .inboxsdk__compose_customTitleBarText {
+        width: calc(100% - 80px);
+    }
+
+    .inboxsdk__compose_hasCustomTitleBarText td.Hm {
+        margin-right: 10px;
+        margin-left: auto;
+    }
+
+    .inboxsdk__compose_statusBarPrependContainer {
+        border-top: 1px solid #cfcfcf;
+    }
+
+    .inboxsdk__compose_statusBarPrependContainer + table td.gU {
+        border-top: none;
+    }
+
+    /* end */
+
+    /* appid warning gmail specific parts */
+
+    input.inboxsdk__x_close_button {
+        background-color: transparent;
+        background-image: url(https://www.streak.com/build/images/circle_border_x.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 20px;
+        width: 20px;
+        border: none;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+
+        float: right;
+        margin: 5px;
+    }
+
+    /* thread rows */
+
+    .inboxsdk__gmail_label.inboxsdk__label_has_icon .au {
+        display: inline-block;
+        margin-left: 14px;
+    }
+
+    .inboxsdk__thread_row_label .inboxsdk__button_icon,
+    .inboxsdk__thread_row_label .inboxsdk__button_iconImg {
+        height: 11px;
+        width: 11px;
+    }
+
+    .inboxsdk__thread_row_label .inboxsdk__button_icon {
+        display: inline-block;
+        margin-top: 3px;
+        margin-left: 4px;
+        position: absolute;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__thread_row_label .inboxsdk__button_icon {
+        margin-top: 2px;
+    }
+
+    .inboxsdk__thread_row_button {
+        outline: 0;
+        height: 20px;
+        width: 20px;
+        padding: 0px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__thread_row_custom_date_container {
+        max-width: inherit;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__thread_row_button .inboxsdk__button_iconImg {
+        height: 20px;
+        width: 20px;
+        margin-top: 0px;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__thread_row_button {
+        position: relative;
+        padding: 0 5px;
+        top: -2px;
+        height: 15px;
+        width: 15px;
+    }
+
+    .inboxsdk__gmail_action {
+        float: right;
+        position: relative;
+        background-color: grey;
+        border: 1px solid black;
+        margin-left: 1em;
+        cursor: default;
+        padding: 0 6px;
+        background-image: -webkit-linear-gradient(top, #e9e9e9, #e6e6e6);
+        background-image: linear-gradient(top, #e9e9e9, #e6e6e6);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-color: #ccc;
+        color: #444;
+        height: 17px;
+        line-height: 17px;
+        min-width: 56px;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;
+        padding-right: 18px;
+    }
+
+    .inboxsdk__gmail_action:focus {
+        border: 1px solid #4d90fe;
+        outline: none;
+    }
+
+    .inboxsdk__gmail_action:active {
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    }
+
+    .inboxsdk__gmail_action:hover {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+        background-color: #ededed;
+        background-image: -webkit-linear-gradient(top, #ededed, #eaeaea);
+        background-image: linear-gradient(top, #ededed, #eaeaea);
+        border-color: #b8b8b8;
+    }
+
+    .inboxsdk__gmail_action::after {
+        content: '';
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        margin-left: 5px;
+        background: no-repeat url(https://ssl.gstatic.com/mail/sprites/smartmail-561acb673be75c1d374881a95997fce4.png) -67px -100px;
+        width: 7px;
+        height: 7px;
+        opacity: .55;
+    }
+
+    .inboxsdk__thread_row_custom_date {
+        margin-left: 2px;
+    }
+
+    span.inboxsdk__thread_row_custom_date + span:not(.inboxsdk__thread_row_custom_date) {
+        display: none;
+    }
+
+    span.inboxsdk__thread_row_custom_draft_label + div.yW {
+        display: none;
+    }
+
+    .inboxsdk__thread_row_attachment_icon {
+        margin-left: 3px;
+        width: 16px;
+        height: 16px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__thread_row_attachment_icons_present {
+        max-width: inherit;
+    }
+
+    .inboxsdk__thread_row_icon_wrapper {
+        width: 25px;
+        margin-right: 3px;
+        align-self: center;
+        height: 20px;
+    }
+
+    .inboxsdk__thread_row_icon_wrapper .inboxsdk__button_icon {
+        height: 20px;
+        width: 20px;
+    }
+
+    .inboxsdk__thread_row_icon_wrapper .inboxsdk__button_iconImg {
+        height: 20px;
+        width: 20px;
+        vertical-align: top;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__thread_row_icon_wrapper {
+        height: 0px;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__thread_row_icon_wrapper .inboxsdk__button_icon {
+        height: 24px;
+        width: 24px;
+        margin-top: -12px;
+        position: absolute;
+        top: 50%;
+        overflow: hidden;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__thread_row_icon_wrapper .inboxsdk__button_icon .zA.apw {
+        margin-top: -15px;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__thread_row_icon_wrapper .inboxsdk__button_iconImg {
+        height: 24px;
+        width: 24px;
+        vertical-align: middle;
+    }
+
+    .inboxsdk__thread_row_image_added .y6 .inboxsdk__thread_row_icon_wrapper ~ span[id] {
+        margin-left: 3px;
+    }
+
+    .inboxsdk__thread_row_image_added .a4W, .inboxsdk__thread_row_image_added .apA, .inboxsdk__thread_row_image_added .apx {
+        position: relative;
+    }
+
+    /* end thread rows */
+
+    td.gH div.gK span:first-child > img {
+        margin-right: 3px;
+    }
+
+    td.gH div.gK span:first-child > img:last-child {
+        margin-right: 6px;
+    }
+
+    .inboxsdk__message_attachment_icon {
+        width: 21px;
+        height: 21px;
+        margin-top: -3px;
+    }
+
+    /* Work around issue where clicking "Remove formatting" in Compose causes this
+     * element to become taller and shift the toolbar down. */
+    .gU .aWQ {
+        max-height: 3px;
+    }
+
+    .aQw .inboxsdk__button_iconImg {
+        margin-top: 2px;
+    }
+
+    .aZi .asa .inboxsdk__button_iconImg {
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: -3px;
+    }
+
+    /* Message view attachments toolbar */
+    .aZi .aZj .asa .inboxsdk__button_iconImg {
+        margin: 0;
+    }
+
+    body .dw {
+        /* Fixes issue where a tall compose window opened over a custom view could be
+         * overlapped by Gmail's top bar. Also fixes issue where mole widgets are
+         * only visible while a compose window is open.
+         */
+        z-index: 6 !important;
+    }
+
+    .inboxsdk__compose_outerSidebar_wrapper {
+        position: absolute;
+        left: -401px;
+        top: 0px;
+        background: white;
+        width: 400px;
+        bottom: 0px;
+        border-left: 1px solid silver;
+        box-shadow: -2px 0px 1px #E6E6E6;
+        display: block;
+    }
+
+    .inboxsdk__outerSidebarActive .aSt .inboxsdk__compose_outerSidebar_wrapper {
+        border-left: 0;
+        box-shadow: none;
+        left: -400px;
+    }
+
+    .inboxsdk__outerSidebarActive .aSs > div {
+        width: 50% !important;
+        margin-left: 30%;
+    }
+
+    .inboxsdk__compose_outerSidebar_header {
+        background: #404040;
+        font-size: 80%;
+        padding: 10px 10px 11px 10px;
+        color: white;
+        border-bottom: 1px solid #C4C4C4;
+    }
+
+    .inboxsdk__compose_outerSidebar_body {
+        position: absolute;
+        width: 100%;
+        bottom: 43px;
+        top: 36px;
+        left: -1px;
+        overflow: auto;
+    }
+
+    .inboxsdk__compose_outerSidebar_footer {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        border-top: 1px solid rgb(206, 206, 206);
+        display: block;
+    }
+
+    .inboxsdk__compose_innerSidebarActive form, .inboxsdk__compose_innerSidebarActive .GQ {
+        padding-right: 200px;
+    }
+
+    div.inboxsdk__compose_statusbar {
+        margin: 0;
+        border: 0;
+        height: 40px;
+    }
+
+    .inboxsdk__compose_statusbarActive .aoI {
+        height: auto !important;
+    }
+
+    .inboxsdk__compose_statusbarActive .aDl {
+        z-index: unset;
+    }
+
+    /* compose size fixing */
+    .inboxsdk__compose .qz {
+        max-height: inherit !important;
+    }
+
+    /* .dw means not fullscreen */
+    .dw .inboxsdk__compose_statusbarActive .aDj.aDi {
+        position: static !important;
+    }
+
+    .inboxsdk__compose_statusbarActive .aDj > .aDh {
+        height: auto;
+    }
+
+    .inboxsdk__recipient_row td.ok {
+        height: 23px;
+    }
+
+    .inboxsdk__recipient_row td.az3 {
+        padding: 0px 3px 3px 3px;
+    }
+
+    .inboxsdk__compose_forceRecipientsOpen .fX.aXjCH {
+        display: block !important;
+    }
+
+    .inboxsdk__compose_hideRecipientArea .fX.aXjCH,
+    .inboxsdk__compose_hideRecipientArea .aoD.hl,
+    .inboxsdk__compose_forceRecipientsOpen .aoD.hl,
+    .inboxsdk__compose_forceRecipientRowHidden {
+        display: none !important;
+    }
+
+    /* toolbar visibility */
+
+    [data-thread-toolbar=true] [data-rowlist-toolbar=true] {
+        display: none !important;
+    }
+
+    [data-toolbar-expanded=true] [data-toolbar-expanded=false] {
+        display: none !important;
+    }
+
+    [data-toolbar-expanded=false] [data-toolbar-expanded=true] {
+        display: none !important;
+    }
+
+    [data-toolbar-icononly=true] .inboxsdk__button_text {
+        display: none !important;
+    }
+
+    .inboxsdk__menuItem img, .inboxsdk__menuItem .inboxsdk__icon {
+        height: 16px;
+        width: 16px;
+        margin-left: -20px;
+        position: absolute;
+        margin-top: -1px;
+    }
+
+    /* end */
+
+    /* modal */
+
+    .inboxsdk__modal_overlay {
+        right: 0px;
+        bottom: 0px;
+    }
+
+    .inboxsdk__modal_fullscreen {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        z-index: 503;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        -webkit-justify-content: center;
+        align-items: center;
+        -webkit-align-items: center;
+        padding: 110px 50px 50px 50px;
+    }
+
+    .inboxsdk__modal_content {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .inboxsdk__modal_fullscreen.inboxsdk__modal_content_no_buttons .inboxsdk__modal_content {
+        margin-bottom: 0px;
+    }
+
+    .inboxsdk__modal_close {
+        outline: none;
+        cursor: pointer;
+    }
+
+    .inboxsdk__modal_fullscreen .inboxsdk__modal_container {
+        position: relative;
+        margin-top: -60px;
+        width: auto;
+        overflow: hidden;
+    }
+
+    .inboxsdk__modal_fullscreen.inboxsdk__modal_hideTop .inboxsdk__modal_close {
+        display: none;
+    }
+
+    .inboxsdk__modal_fullscreen.inboxsdk__modal_hideTop .inboxsdk__modal_container {
+        padding-top: 0px;
+    }
+
+    .inboxsdk__modal_fullscreen.inboxsdk__modal_hideTop .inboxsdk__modal_content {
+        margin-top: 0px;
+    }
+
+    .inboxsdk__modal_fullscreen.inboxsdk__modal_hideTop .Kj-JD-K7 {
+        margin: 0px;
+    }
+
+    .inboxsdk__modal_fullscreen.inboxsdk__modal_hideSides .inboxsdk__modal_container {
+        padding-left: 0px;
+        padding-right: 0px
+    }
+
+    .inboxsdk__modal_fullscreen.inboxsdk__modal_hideBottom .inboxsdk__modal_content {
+        margin-bottom: 0px;
+    }
+
+    .inboxsdk__modal_fullscreen.inboxsdk__modal_hideBottom .inboxsdk__modal_container {
+        padding-bottom: 0px;
+    }
+
+    /* end modal */
+
+    /* mole */
+
+    /* Fix issue where Compose toolbar can become disconnected when moles or
+     * drawers are in use */
+    .inboxsdk__drawers_in_use .aDi,
+    .inboxsdk__moles_in_use .aDi {
+        left: auto !important;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__drawers_in_use .aDi,
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__moles_in_use .aDi {
+        position: static;
+    }
+
+    /* Make it so the compose/mole layer doesn't wrap, so we don't have to do a lot
+     * of fancy logic to hide moles ourselves when things get too crowded. */
+    .inboxsdk__moles_in_use .nH > .nH > .no {
+        white-space: nowrap;
+    }
+
+    .inboxsdk__moles_in_use .nH > .nH > .no > * {
+        white-space: initial;
+    }
+
+    .inboxsdk__moles_in_use .nH > .nH > .no > .nn {
+        display: inline-block;
+        float: none;
+    }
+
+    .inboxsdk__mole_view {
+        position: relative;
+        max-width: 564px;
+        height: 100vh;
+        vertical-align: top;
+        display: inline-flex;
+        display: -webkit-inline-flex;
+        align-items: flex-end;
+        -webkit-align-items: flex-end;
+    }
+
+    .inboxsdk__mole_view_inner {
+        visibility: visible;
+        box-sizing: border-box;
+        margin-right: 5px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px;
+        min-width: 260px;
+        min-height: 36px;
+    }
+
+    .inboxsdk__mole_view_titlebar {
+        position: absolute;
+        left: 0;
+        right: 5px;
+        color: white;
+        font-size: 12.8px;
+        background: #404040;
+        box-sizing: border-box;
+        height: 36px;
+        padding-top: 7px;
+        padding-left: 11px;
+        cursor: pointer;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__mole_view_titlebar {
+        border-radius: 4px 4px 0 0;
+    }
+
+    .inboxsdk__mole_view_titlebar h2 {
+        font-size: inherit;
+        font-weight: inherit;
+        margin: 4px 0 0 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .inboxsdk__mole_title_buttons {
+        white-space: nowrap;
+        float: right;
+        padding-right: 5px;
+        margin-top: -3px;
+    }
+
+    .inboxsdk__mole_title_buttons > img {
+        height: 24px;
+        width: 24px;
+        position: relative;
+        top: 2px;
+        opacity: 0.6;
+    }
+
+    .inboxsdk__mole_title_buttons > img:hover {
+        opacity: 1;
+        background-color: #737373;
+    }
+
+    .inboxsdk__mole_view.inboxsdk__minimized .inboxsdk__mole_view_content,
+    .inboxsdk__mole_view.inboxsdk__minimized.inboxsdk__mole_use_minimize_title h2.inboxsdk__mole_default,
+    .inboxsdk__mole_view:not(.inboxsdk__minimized) h2.inboxsdk__mole_minimized,
+    .inboxsdk__mole_view:not(.inboxsdk__mole_use_minimize_title) h2.inboxsdk__mole_minimized,
+    .inboxsdk__mole_view.inboxsdk__minimized .Hl,
+    .inboxsdk__mole_view:not(.inboxsdk__minimized) .Hk {
+        display: none;
+    }
+
+    .inboxsdk__mole_view_content {
+        margin-top: 36px;
+        border: 1px solid #cfcfcf;
+        background: white;
+        min-width: 260px;
+        min-height: 20px;
+        max-height: 80vh;
+    }
+
+    .inboxsdk__mole_view_chromeless .inboxsdk__mole_view_inner {
+        min-width: 0px;
+    }
+
+    .inboxsdk__mole_view_chromeless .inboxsdk__mole_view_content {
+        margin-top: 0px;
+        min-width: 0px;
+    }
+
+    /* end mole */
+
+    /* tabs */
+
+    .inboxsdk__tab {
+        width: 30px;
+    }
+
+    .inboxsdk__tab.fHFEHCaEHHDIFfdC:first-child:last-child {
+        display: none;
+    }
+
+    .inboxsdk__tab.inboxsdk__tab_selected {
+        width: auto;
+    }
+
+    table.aKk .inboxsdk__contentTabContainer .inboxsdk__tab .aAy[role=tab] {
+        height: 28px;
+    }
+
+    .inboxsdk__tab_icon {
+        width: 30px;
+        height: 25px;
+        background-position-x: 5px;
+        background-position-y: 3px;
+        background-size: 16px;
+        bacgkround-repeat: no-repeat;
+    }
+
+    .inboxsdk__tab_icon img {
+        height: 16px;
+        width: 16px;
+        margin-left: 5px;
+        margin-top: 3px;
+    }
+
+    .inboxsdk__tab .aKx {
+        top: 4px;
+    }
+
+    .inboxsdk__sidebar div[role=complementary] {
+        position: static !important;
+    }
+
+    /* Fix issue where sidebar causes threadview to be taller than it should */
+    .inboxsdk__sidebar > div.y4,
+    .EDfIaJEHJECCAdAb > div.y4 {
+        display: none;
+    }
+
+    table.aKk .inboxsdk__contentTabContainer .inboxsdk__tab:first-child .aAy[role=tab] {
+        border-left-width: 1px;
+    }
+
+    /* end tabs */
+
+    /* old sidebar */
+
+    .inboxsdk__sidebar .inboxsdk__contentPanelContainer {
+        font: 12px Arial, sans-serif;
+        max-width: 220px;
+    }
+
+    .inboxsdk__contentPanelContainer_contentContainer {
+        overflow: hidden;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #D8D8D8;
+    }
+
+    /* end old sidebar */
+
+    /* sidebar */
+
+    .EDfIaJEHJECCAdAb > div[role=complementary] {
+        position: static !important;
+        width: 216px !important;
+    }
+
+    .EDfIaJEHJECCAdAb {
+        /* Necessary to prevent z-indexes on sidebar items from causing them to show
+        above stuff outside of the sidebar. */
+        will-change: position;
+    }
+
+    .JeDHfcJFHbDacdIJ {
+        background: #ffffff;
+    }
+
+    .FdBAGfAbefEeacJA {
+        padding: 4px 0 12px;
+    }
+
+    .EbHIfcefDecBdAGe.fHFEHCaEHHDIFfdC .FdBAGfAbefEeacJA {
+        padding-top: 0;
+    }
+
+    /* gmail addon support */
+
+    .container_app_sidebar_in_use.no,
+    .bCBaceEJbCJHbIcH.no {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: row;
+        -webkit-flex-direction: row;
+        width: 100%;
+    }
+
+    body[dir=rtl] .container_app_sidebar_in_use.no[dir=ltr],
+    body[dir=rtl] .idm5_container_app_sidebar_no_icons.no[dir=ltr] {
+        flex-direction: row-reverse;
+        -webkit-flex-direction: row-reverse;
+    }
+
+    /* overwrite margin right of the gmail page next/back and settings icon buttons
+       to line up properly */
+
+    /* when no siebar is visible */
+    .container_app_sidebar_in_use.no .G-atb.inboxsdk__thread_toolbar_parent[gh=tm] {
+        margin-right: -57px !important;
+    }
+
+    /* when addon sidebar visible */
+    .container_addon_sidebar_visible.container_app_sidebar_in_use.no .G-atb.inboxsdk__thread_toolbar_parent[gh=tm] {
+        margin-right: -321px !important;
+    }
+
+    /* when sdk sidebar visible */
+    .container_app_sidebar_visible.container_app_sidebar_in_use.no .G-atb.inboxsdk__thread_toolbar_parent[gh=tm] {
+        margin-right: -321px !important;
+    }
+
+    /* no sdk icons and no native addons */
+    .bCBaceEJbCJHbIcH .G-atb.inboxsdk__thread_toolbar_parent[gh=tm] {
+        margin-right: 0px !important;
+    }
+
+    .container_app_sidebar_in_use .bkK.nn,
+    .bCBaceEJbCJHbIcH .bkK.nn {
+        width: auto !important;
+        flex: 1;
+        -webkit-flex: 1;
+        min-width: 0px;
+    }
+
+    /* when removing addon icons */
+    .bCBaceEJbCJHbIcH .bnl.nn {
+        z-index: -1;
+        position: absolute;
+    }
+
+    .container_app_sidebar_in_use .EDfIaJEHJECCAdAb {
+        min-width: 57px !important;
+        flex-shrink: 0;
+        -webkit-flex-shrink: 0;
+    }
+
+    .container_app_sidebar_in_use .EDfIaJEHJECCAdAb.app_sidebar_visible {
+        min-width: 321px !important;
+    }
+
+    .container_app_sidebar_in_use .EDfIaJEHJECCAdAb > .J-KU-Jg {
+        display: block !important;
+    }
+
+    .container_app_sidebar_in_use .EDfIaJEHJECCAdAb .AbDaABFcEAFfcIcc {
+        display: none;
+    }
+
+    .container_app_sidebar_in_use .EDfIaJEHJECCAdAb.app_sidebar_visible .AbDaABFcEAFfcIcc {
+        display: block;
+        float: left;
+        height: 100%;
+        border-left: 1px solid #e0e0e0;
+        padding-left: 16px;
+        width: calc(100% - 74px);
+        overflow: auto;
+    }
+
+    .container_app_sidebar_in_use .AbDaABFcEAFfcIcc .FdBAGfAbefEeacJA {
+        width: calc(100% - 16px);
+        padding-right: 16px;
+    }
+
+    .container_app_sidebar_in_use .EDfIaJEHJECCAdAb.app_sidebar_visible .J-KU-Jz {
+        width: auto;
+        padding-right: 50px;
+    }
+
+    /* make the native addon loading+icon container (div.bvq) always visible */
+    .container_app_sidebar_in_use .EDfIaJEHJECCAdAb > div:first-child {
+        display: block !important;
+    }
+
+    /* hide the native addon loading div */
+    .container_app_sidebar_in_use .EDfIaJEHJECCAdAb > div:first-child > div:first-child {
+        display: none !important;
+    }
+
+    /* remove extraneous left border from our clone of the addon loading div */
+    .EDfIaJEHJECCAdAb .inboxsdk__addon_icon_loading > div {
+        border-left: none !important;
+    }
+
+    .EDfIaJEHJECCAdAb .GaaJHIeICADdFbec .GbeDfabEcCDDJJJA:not(.sidebar_button_container_active) {
+        filter: grayscale(100%);
+        opacity: 0.6;
+    }
+
+    .GaaJHIeICADdFbec .inboxsdk__button_icon {
+        margin: 16px 16px 0px 16px;
+        border: none;
+        background: #fff;
+        height: 25px;
+        width: 24px;
+        overflow: hidden;
+        padding: 0;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .GaaJHIeICADdFbec .inboxsdk__button_iconImg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .GaaJHIeICADdFbec .sidebar_button_container_active .inboxsdk__button_selectedIndicator {
+        height: 24px;
+        width: 4px;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        background-color: rgb(66, 133, 244);
+    }
+
+    .GaaJHIeICADdFbec + div:before {
+        position: absolute;
+        content: '';
+        height: 1px;
+        background: #ddd;
+        width: 100%;
+        top: -8px;
+    }
+
+    /* end sidebar */
+
+    /* custom content */
+
+    .inboxsdk__custom_view_element {
+        overflow: auto;
+    }
+
+    /* end custom content */
+
+    /* nav menu */
+
+    .inboxsdk__hide_native_marker .ain:not(.inboxsdk__navItem) {
+        border-left-color: transparent;
+    }
+
+    .inboxsdk__hide_native_marker .ain:not(.inboxsdk__navItem) .nZ .aio * {
+        color: inherit !important;
+    }
+
+    .inboxsdk__hide_native_marker .ain:not(.inboxsdk__navItem) .nU:not(.n1) .n0 {
+        font-weight: normal;
+    }
+
+    .inboxsdk__hide_addon_container {
+        display: flex !important;
+        display: -webkit-flex !important;
+        flex-direction: row;
+        -webkit-flex-direction: row;
+        width: 100% !important;
+    }
+
+    body[dir=rtl] .inboxsdk__hide_addon_container[dir=ltr] {
+        flex-direction: row-reverse;
+        -webkit-flex-direction: row-reverse;
+    }
+
+    .inboxsdk__hide_addon_container > .bkK.nn {
+        width: auto !important;
+        flex: 1;
+        -webkit-flex: 1;
+        min-width: 0;
+    }
+
+    .inboxsdk__hide_addon_container > .bnl.nn {
+        display: none;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__navItem {
+        font-size: 14px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__navItem > .TO:hover .pM.aj0 {
+        display: flex;
+        display: -webkit-flex;
+        visibility: visible;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__navItem.inboxsdk__navItem_nonClickable > .TO:active {
+        background-color: initial;
+    }
+
+    .inboxsdk__navItem_hover .aj0, .inboxsdk__navItem_hover .p8 {
+        visibility: visible;
+    }
+
+    .inboxsdk__gmailv1css .inboxsdk__navItem_link {
+        position: absolute;
+        top: 0px;
+        right: -4px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__navItem_link {
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__navItem_link > a {
+        margin-left: 16px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__navItem > .TO .inboxsdk__button {
+        margin-right: 0;
+    }
+
+    [dir=rtl] .inboxsdk__navItem_link {
+        left: -4px;
+        right: initial;
+    }
+
+    .inboxsdk__navItem_container .aio .inboxsdk__button {
+        position: absolute;
+        top: 0px;
+        right: -30px;
+    }
+
+    .inboxsdk__navItem_marker {
+        position: absolute;
+        left: 0px;
+        padding-bottom: 2px;
+    }
+
+    body.inboxsdk__gmailv1css .ain .inboxsdk__navItem_container {
+        margin-left: -18px;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__navItem_container {
+        margin-left: -14px;
+    }
+
+    .inboxsdk__expando {
+        z-index: 1;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__navItem_link > a,
+    .aip .CK {
+        color: #15c;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__navItem_link > a:hover,
+    .aip .CK:hover {
+        text-decoration: underline;
+    }
+
+    .inboxsdk__navItem_container .aio.aip {
+        white-space: nowrap;
+    }
+
+    /* end nav menu */
+
+    /* search results section */
+
+    .inboxsdk__custom_sections {
+        margin-bottom: 15px;
+    }
+
+    .inboxsdk__custom_sections.Wc {
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__custom_sections {
+        margin-bottom: 8px;
+    }
+
+    .inboxsdk__gmailv1css .inboxsdk__resultsSection {
+        padding-top: 20px;
+    }
+
+    .inboxsdk__resultsSection.inboxsdk__resultsSection_nonCollapsible .inboxsdk__resultsSection_title .Wp {
+        visibility: hidden;
+    }
+
+    .inboxsdk__custom_sections.Wc .inboxsdk__resultsSection {
+        padding-top: 0px;
+    }
+
+    .inboxsdk__custom_sections .Wg {
+        padding-top: 0px;
+    }
+
+    .inboxsdk__custom_sections.Wc .Wg {
+        border-bottom: 0;
+        padding: 0px;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__results_collapsedContainer > div {
+        display: inline;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__results_collapsedContainer.Wg {
+        height: auto;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__results_collapsedContainer > div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .inboxsdk__resultsSection.inboxsdk__resultsSection_collapsed {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__resultsSection.inboxsdk__resultsSection_collapsed {
+        display: inline-flex;
+    }
+
+    .Wc .inboxsdk__resultsSection.inboxsdk__resultsSection_collapsed {
+        margin-right: 0px;
+    }
+
+    .inboxsdk__resultsSection_collapsed .Cr {
+        display: none;
+    }
+
+    .inboxsdk__resultsSection_title {
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__resultsSection_title {
+        display: flex;
+    }
+
+    .Wc .inboxsdk__resultsSection_title {
+        padding: 3px 0 3px 8px;
+    }
+
+    .inboxsdk__resultsSection_title_subtitle {
+        opacity: 0.5;
+        margin-left: 5px;
+    }
+
+    .Wc .inboxsdk__resultsSection_title_subtitle {
+        font-size: 80%;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__resultsSection_header {
+        min-height: 40px;
+        line-height: 40px;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__resultsSection_title .Wp {
+        float: left;
+        height: 10px;
+        width: 20px;
+        margin-top: 3px;
+    }
+
+    body.inboxsdk__gmailv1css .inboxsdk__resultsSection_title h3 {
+        margin-bottom: 10px;
+        margin-top: 20px;
+        display: inline;
+        float: none;
+    }
+
+    .inboxsdk__resultsSection_header_summaryText.Wm:last-child .amH {
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+
+    .inboxsdk__custom_sections.Wc .inboxsdk__resultsSection_header_summaryText:last-child {
+        margin-right: 11px;
+    }
+
+    .inboxsdk__custom_sections.Wc .J-JN-M-I {
+        margin-right: 13px;
+    }
+
+    .inboxsdk__resultsSection .TB.TC {
+        text-align: center;
+    }
+
+    .inboxsdk__resultsSection .inboxsdk__resultsSection_loading {
+        font-style: italic;
+    }
+
+    .inboxsdk__resultsSection .inboxsdk__resultsSection_result_icon {
+        height: 15px;
+        width: 15px;
+    }
+
+    .inboxsdk__resultsSection .inboxsdk__resultsSection_tableRow.zA {
+        /* For reasons not entirely clear to me, the position of this element can't be "relative" (which
+        the zA class sets it to) or "border-radius" does not work on any of the children */
+        position: initial;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__resultsSection .inboxsdk__resultsSection_tableRow.zA:hover > .xW {
+        /* Gmailv2 tries to hide the "xW" element when a "zA" element is hovered. This prevent that. */
+        display: flex;
+    }
+
+    .inboxsdk__resultsSection .inboxsdk__resultsSection_tableRow .xT {
+        align-items: center;
+        -webkit-align-items: center;
+    }
+
+    .inboxsdk__resultsSection .inboxsdk__resultsSection_tableRow .WA > div {
+        width: 100%;
+    }
+
+    .inboxsdk__resultsSection .xX {
+        width: 20ex;
+    }
+
+    .inboxsdk__resultsSection_result_title span {
+        text-overflow: ellipsis;
+        display: block;
+        overflow: hidden;
+    }
+
+    .inboxsdk__resultsSection tr .xW > span {
+        overflow: hidden;
+        display: block;
+        text-overflow: ellipsis;
+    }
+
+    .inboxsdk__resultsSection .V3 {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .inboxsdk__resultsSection .at {
+        position: relative;
+    }
+
+    .inboxsdk__thread_row_label {
+        flex-shrink: 0;
+        align-self: center;
+    }
+
+    .inboxsdk__resultsSection_label_icon {
+        height: 11px;
+        width: 11px;
+        position: absolute;
+        top: 2px;
+        margin-left: 4px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__resultsSection_label_icon {
+        margin-top: 1px;
+    }
+
+    .inboxsdk__resultsSection .av, .inboxsdk__thread_row_label .av {
+        max-width: 90px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .inboxsdk__resultsSection_label_icon + .av, .inboxsdk__thread_row_label .inboxsdk__button_icon + .av {
+        margin-left: 16px;
+    }
+
+    .Wc .inboxsdk__resultsSection_footer {
+        padding: 3px 3px 3px 8px;
+    }
+
+    /* end search results section */
+
+    /* tooltip */
+
+    /* gmail styles */
+
+    .inboxsdk__tooltip .T-P {
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+        background-color: #fff;
+        border: 1px solid;
+        border-color: #bbb #bbb #a8a8a8;
+        padding: 16px;
+        position: absolute;
+        z-index: 1201 !important;
+    }
+
+    .inboxsdk__tooltip.inboxdk__tooltip_content .T-P {
+        padding: 0px;
+    }
+
+    .inboxsdk__tooltip .aRM {
+        outline: none;
+        padding: 13px 10px 16px;
+        text-align: center;
+        font: normal normal normal normal 16px / normal arial, sans-serif;
+    }
+
+    .inboxdk__tooltip_content.inboxsdk__tooltip .aRM {
+        padding: 0px;
+    }
+
+    .inboxsdk__tooltip .aRR {
+        color: #333;
+        font-size: 18px;
+        margin-top: 13px;
+    }
+
+    .inboxsdk__tooltip .aRQ {
+        color: #777;
+        font-size: 13px;
+        margin: 3px 0 14px 0;
+    }
+
+    /* end gmail styles */
+
+    .inboxsdk__tooltip {
+        position: fixed;
+        z-index: 1300;
+        transition: left 200ms ease, top 200ms ease;
+    }
+
+    .inboxsdk__tooltip .T-P {
+        position: relative;
+        width: auto;
+        max-width: 500px;
+    }
+
+    .inboxsdk__tooltip .inboxsdk__tooltip_arrow {
+        position: fixed;
+        z-index: 1400;
+        margin-top: -1px;
+        transition: left 200ms ease, top 200ms ease;
+    }
+
+    .inboxsdk__tooltip .inboxsdk__tooltip_close {
+        -webkit-user-select: none;
+    }
+
+    .inboxsdk__tooltip .inboxsdk__button {
+        margin-right: 0px;
+    }
+
+    .inboxsdk__tooltip .inboxsdk__tooltip_image {
+        max-height: 300px;
+        max-width: 500px;
+        overflow: hidden;
+        height: auto;
+    }
+
+    .inboxsdk__tooltip .inboxsdk__tooltip_image > img {
+        max-height: 300px;
+        max-width: 500px;
+    }
+
+    /* end tooltip */
+
+    /* attachment card */
+
+    .inboxsdk__attachmentCard img.aQG.aYB {
+        max-width: 178px;
+        min-width: 178px;
+        min-height: 118px;
+    }
+
+    .inboxsdk__attachmentCard img.aZG.aYw {
+        background: none;
+    }
+
+    /* add some margins between cards so 4+ cards don't hit each other */
+
+    .aQw > .T-I.J-J5-Ji.L3 {
+        margin-top: 5px;
+    }
+
+    /* end attachment card */
+
+    /* keyboard shortcut help */
+
+    table.cf.wd.inboxsdk__shortcutHelp_table {
+        margin-bottom: 15px;
+    }
+
+    .inboxsdk__shortcutHelp_table td.Dn {
+        display: inline-block;
+        width: 50%;
+    }
+
+    .inboxsdk__shortcutHelp_table table.cf {
+        display: block;
+    }
+
+    .inboxsdk__shortcutHelp_table tbody tbody {
+        display: block;
+    }
+
+    .inboxsdk__shortcutHelp_table tbody tbody tr {
+        display: block;
+        white-space: nowrap;
+    }
+
+    .inboxsdk__shortcutHelp_table td.wg.Dn {
+        display: inline-block;
+        width: 45%;
+    }
+
+    .inboxsdk__shortcutHelp_table span.wb {
+        margin-left: 3px;
+    }
+
+    .inboxsdk__shortcutHelp_table td.we.Dn {
+        width: 60%;
+        white-space: normal;
+    }
+
+    .inboxsdk__shortcutHelp_title img.inboxsdk__icon {
+        height: 21px;
+        width: 21px;
+        vertical-align: middle;
+        margin-right: 10px;
+        border-radius: 4px;
+    }
+
+    /* end keyboard shortcut help */
+
+    /* search suggestions */
+
+    .asor.inboxsdk__custom_suggestion {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        -webkit-justify-content: center;
+        align-items: center;
+        -webkit-align-items: center;
+    }
+
+    .inboxsdk__custom_suggestion img {
+        max-width: 32px;
+        max-height: 32px;
+        margin-left: -11px;
+    }
+
+    /* end send suggestions */
+
+    /* app toolbar */
+
+    .inboxsdk__gmailv1css .inboxsdk__appButton {
+        margin-right: -15px;
+    }
+
+    .inboxsdk__gmailv1css .inboxsdk__appButton:first-child {
+        margin-left: -45px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__appButton:first-child {
+        margin-left: -15px;
+    }
+
+    .inboxsdk__gmailv1css .inboxsdk__appButton + .inboxsdk__appButton {
+        margin-left: 35px;
+    }
+
+    body:not(.inboxsdk__gmailv1css) .inboxsdk__appButton + .inboxsdk__appButton {
+        margin-left: 20px;
+    }
+
+    .inboxsdk__appButton.inboxsdk__appButton_noGPlus {
+        margin-right: 0px;
+    }
+
+    .inboxsdk__appButton .inboxsdk__button_icon {
+        margin-right: 5px;
+        position: relative;
+    }
+
+    .inboxsdk__appButton a {
+        color: #404040;
+        text-decoration: none;
+        line-height: 24px;
+    }
+
+    .inboxsdk__appButton.inboxsdk__appButton_noGPlus a {
+        line-height: 30px;
+    }
+
+    .inboxsdk__appButton a:hover {
+        text-decoration: underline;
+        color: #000;
+    }
+
+    .inboxsdk__gmail_dark_theme .inboxsdk__appButton a {
+        color: #eee;
+    }
+
+    .inboxsdk__gmail_dark_theme .inboxsdk__appButton a:hover {
+        color: #fff;
+    }
+
+    .inboxsdk__appButton_tooltip {
+        outline: none;
+        transition: none;
+        -webkit-animation: gb__a .2s;
+    }
+
+    .inboxsdk__appButton_tooltip .inboxsdk__tooltip_close {
+        display: none;
+    }
+
+    .inboxsdk__tooltip.inboxsdk__appButton_tooltip .T-P {
+        padding: 0px;
+    }
+
+    .inboxsdk__tooltip.inboxsdk__appButton_tooltip .aRM {
+        padding: 0px;
+        white-space: initial;
+        text-align: center;
+        font: normal normal normal normal 16px / normal arial, sans-serif;
+    }
+
+    .inboxsdk__tooltip.inboxsdk__appButton_tooltip .inboxsdk__tooltip_arrow {
+        transform-origin: top;
+        transform: rotateZ(180deg);
+        margin-top: 9px;
+    }
+
+    /* end app toolbar */
+    </style>
+</head>
+<body cz-shortcut-listen="true"><div class="bodycontainer"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr height="14px"><td width="143"><img src="//www.gmail.com/mail/help/images/logonew.gif" width="143" height="59" alt="Gmail" class="logo"></td><td align="right"><font size="-1" color="#777"><b>Parth Mistry &lt;ppmistry204@gmail.com&gt;</b></font></td></tr></tbody></table><hr><div class="maincontent"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td><font size="+1"><b>Ola Share Receipt for OSN807837631</b></font><br><font size="-1" color="#777">1 message</font></td></tr></tbody></table><hr><table width="100%" cellpadding="0" cellspacing="0" border="0" class="message"><tbody><tr><td><font size="-1"><b>Ola Share </b>&lt;noreply@olacabs.com&gt;</font></td><td align="right"><font size="-1">Thu, Jan 4, 2018 at 11:19 AM</font></td></tr><tr><td colspan="2"><font size="-1" class="recipient"><div>To: ppmistry204@gmail.com</div></font></td></tr><tr><td colspan="2"><table width="100%" cellpadding="12" cellspacing="0" border="0"><tbody><tr><td><div style="overflow: hidden;"><font size="-1"><u></u> <div style="margin:0;padding:0"> <table bgcolor="#eeeeee" border="0" cellpadding="0" cellspacing="0" width="100%"> <tbody><tr> <td bgcolor="#EEEEEE" style="padding:20px 15px 0 15px" class="m_-7822287869295515180section-padding"> <div align="center"> <table border="0" cellpadding="0" cellspacing="0" width="660" class="m_-7822287869295515180wrapper"> <tbody><tr> <td bgcolor="#ffffff" style="padding:24px 14px 0 14px;border-top-left-radius:4px;border-top-right-radius:4px" class="m_-7822287869295515180header-mobile-wrapper"> <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr> <td width="40%" align="left"> <table> <tbody><tr> <td style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;color:#707070;font-weight:normal;line-height:16px" class="m_-7822287869295515180date-time"> 4 Jan 2018<br> </td> </tr>
+    <tr> <td cellpadding="0" cellspacing="0" border="0" style="padding:0"> <a style="text-decoration:none;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;color:#707070;font-weight:normal;line-height:16px"> 10:21 AM </a> </td>
+    </tr> </tbody></table> </td> <td width="60%" align="right"> <table border="0" cellpadding="0" cellspacing="0"> <tbody><tr> <td align="right" style="padding:0 0 5px 0" class="m_-7822287869295515180right-logo"> <a href="#m_-7822287869295515180_" style="float:right"> <img width="76" style="display:inline;float:none;text-align:center;width:76px" src="https://ci5.googleusercontent.com/proxy/RCBnX1Y_bS3lkusxMCEvxhuwJjcndr04NtWIVXtaBsCnFh5ZfZShkiOygPUVCCsEE804lwuViDj_k9Fg09rOnVuFX1m5fbeojAYa0aVSZQ=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_logo_olacabs" alt="Logo"> </a> </td> </tr> </tbody></table> </td> </tr> <tr> <td style="color:#ffffff;line-height:10px" class="m_-7822287869295515180spacing-table">
+        <img src="https://ci3.googleusercontent.com/proxy/0mTS44dxiHSQnuqULOF7jUsJLvE7JhypYpDa-jK3SU4T09FBcC3y3SjQy3NNpbeTB8sy1HrxSe55uyxo38F-u8TWhW1-yCJrIoT6fbo=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_White_line" style="width:100%"> </td> </tr> </tbody></table> </td> </tr> <tr> <td class="m_-7822287869295515180cost-count" bgcolor="#ffffff" align="center" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:40px;font-weight:bold;color:#000000"> ₹45 </td> </tr> <tr> <td bgcolor="#ffffff" align="center" style="padding-right:20px;padding-left:20px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#777777"> <table width="100%" cellpadding="0" cellspacing="0" border="0"> <tbody><tr>
+    <td align="center" style="padding-top:0px;background-image:url('https://ci5.googleusercontent.com/proxy/pH-g_E486vsmNMhQnPfyRjRgUf8DiRge-ydTnQEpQ3G2hjgq7KQ0hB4bqlK8sbJunpgkGix52ae2oodGtIqAl552VcuWY3kOEXx_bmA=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_background');background-position:center"> <span style="background-color:#ffffff;padding-left:0px;padding-right:0px;font-size:12px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif"> OSN807837631 </span> </td> </tr>
+</tbody></table> </td> </tr> <tr> <td class="m_-7822287869295515180thanks-with" bgcolor="#ffffff" align="center" style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;font-size:14px;word-spacing:-0.3px;color:#000000;padding-bottom:0px;padding-top:17px"> Thanks for traveling with us, Parth </td> </tr> <tr> <td bgcolor="#ffffff" align="center" style="padding-left:16px;padding-right:16px">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0"> <tbody><tr> <td style="border-bottom:3px solid #ececec;width:100%;text-align:center;color:#ffffff"> <img src="https://ci3.googleusercontent.com/proxy/0mTS44dxiHSQnuqULOF7jUsJLvE7JhypYpDa-jK3SU4T09FBcC3y3SjQy3NNpbeTB8sy1HrxSe55uyxo38F-u8TWhW1-yCJrIoT6fbo=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_White_line" style="width:100%"> </td> </tr> </tbody></table> </td> </tr> </tbody></table>
+</div> </td> </tr> </tbody></table> <table bgcolor="#eeeeee" border="0" cellpadding="0" cellspacing="0" width="100%"> <tbody><tr> <td bgcolor="#EEEEEE" align="center" style="padding:0 15px 0 15px" class="m_-7822287869295515180tracking-space"> <table border="0" cellpadding="0" cellspacing="0" width="660" class="m_-7822287869295515180responsive-table"> <tbody><tr> <td> <table cellspacing="0" cellpadding="0" border="0" width="100%"> <tbody><tr> <td bgcolor="#ffffff" valign="top" style="padding-top:28px;padding-bottom:0;padding-left:0px;padding-right:0px" class="m_-7822287869295515180ride-detail"> <table cellpadding="0" cellspacing="0" border="0" width="49.5%" align="left" class="m_-7822287869295515180responsive-table"> <tbody><tr> <td style="padding-left:14px;padding-right:14px" class="m_-7822287869295515180ride-detail-padding"> <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tbody><tr> <td align="center" style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#333333;font-size:16px;padding-bottom:16px;font-weight:bold"> Ride Details </td> </tr> <tr> <td align="center" class="m_-7822287869295515180map-img">
+        <img width="100%" height="156" style="width:100%;height:156px" alt=""> </td> </tr> <tr> <td style="padding:9px 0 0 0"> <table cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tbody><tr> <td valign="top" class="m_-7822287869295515180trip-detail" style="border-bottom:1px solid #eeeeee;padding-bottom:10px;padding-left:14px"> <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%" align="left"> <tbody><tr>
+            <td align="left" style="width:42px;padding-left:2px" width="42" class="m_-7822287869295515180left-space-col"> <img width="38" style="width:38px" src="https://ci6.googleusercontent.com/proxy/IZzMZwlz9QDK8Wt3s2MQW_9NPj7I7X7r14hrqxmt7Ndoa3PkvPRDapIJcYgTI8_HsMsInWHEFPue9GNyGiBg3HORa8AVIm4ZN_hPuOi--bxR=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_driver_default" alt=""> </td> <td align="left" style="padding-left:16px">
+            <table> <tbody><tr> <td style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#000000;font-size:16px;line-height:18px"> mujeebo rehman </td>
+            </tr>
+            </tbody></table> </td> </tr> </tbody></table> </td>
+        </tr> <tr> <td style="color:#ffffff;line-height:12px!important;font-size:10px!important"> <img src="https://ci3.googleusercontent.com/proxy/0mTS44dxiHSQnuqULOF7jUsJLvE7JhypYpDa-jK3SU4T09FBcC3y3SjQy3NNpbeTB8sy1HrxSe55uyxo38F-u8TWhW1-yCJrIoT6fbo=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_White_line" style="width:100%"> </td> </tr>
+        </tbody></table> </td> </tr> <tr> </tr> <tr> <td style="padding:0 0 0 0">
+        <table cellspacing="0" cellpadding="0" border="0" width="100%"> <tbody><tr> <td valign="top" class="m_-7822287869295515180trip-detail" style="border-bottom:1px solid #eeeeee;padding-bottom:7px;padding-left:14px"> <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%" align="left">
+            <tbody><tr> <td align="left" style="width:42px;padding-left:2px" width="42" class="m_-7822287869295515180left-space-col"> <img width="38" style="width:38px" src="https://ci6.googleusercontent.com/proxy/csYquOWKJWBYUoUkIZVzNHFjWCjwLoYYt5n2ocUxJvxGpUAud6ORbxZjWgMTPkJcj1nD38xudCxcEdhIQO3TM0YJxLaRfye3TMppxA=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Share_invoice.png" alt=""> </td>
+                <td align="left" style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#000000;font-size:14px;padding-left:16px;line-height:16px"> Share - White Swift Dzire </td> </tr> </tbody></table> </td>
+        </tr> <tr> <td style="color:#ffffff;line-height:8px"> <img src="https://ci3.googleusercontent.com/proxy/0mTS44dxiHSQnuqULOF7jUsJLvE7JhypYpDa-jK3SU4T09FBcC3y3SjQy3NNpbeTB8sy1HrxSe55uyxo38F-u8TWhW1-yCJrIoT6fbo=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_White_line" style="width:100%"> </td> </tr>
+        </tbody></table> </td> </tr> <tr style="vertical-align:top;text-align:left;display:block;background-color:#ffffff;padding-bottom:30px" align="left" bgcolor="#ffffff"> <td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;text-align:left;display:inline-block;padding:0 0 0 14px" align="left" valign="top" class="m_-7822287869295515180route-address">
+        <table style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;width:auto;padding:0"> <tbody> <tr style="vertical-align:top;text-align:left;width:100%;padding:0" align="left"> <td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;text-align:left;display:table-cell;width:60px!important;line-height:16px;height:auto;padding:0 0 0 0" align="left" valign="top" class="m_-7822287869295515180left-space-address"> <span style="font-size:14px;font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;font-weight:normal;color:#000000!important"> <span class="m_-7822287869295515180aBn"> <a class="m_-7822287869295515180aQJ" style="text-decoration:none!important;color:#000000!important">10:24 AM</a>
+</span> </span> </td> <td rowspan="2" style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;text-align:left;display:table-cell;width:17px!important;padding:3px 2px 10px 2px" align="left" valign="top"> <img width="6" src="https://ci3.googleusercontent.com/proxy/cieJsiRqmGTu8dIPxcqPGMk_r5uNOVIsP2A3xjWGskzTMcV-Snp4nHFWRWHzGC5e8H5TSf4ZFjZPQ3YUK2-vJIhzS_O5sATj-qSu=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_src_dest" style="outline:none;text-decoration:none;float:left;clear:both;display:block;width:6px!important" align="left" class="m_-7822287869295515180CToWUd"> </td> <td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;text-align:left;display:table-cell;width:197px;line-height:16px;height:57px;padding:0 10px 10px 0" align="left" valign="top">
+            <span style="font-size:14px;font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#000000!important;line-height:16px;text-decoration:none"> Tulsi Villa Co operative housing society, Old Prabhadevi Marg, Prabhadevi, Mumbai, Maharashtra 400025, India </span> </td> </tr>
+        <tr style="vertical-align:top;text-align:left;width:100%;padding:0" align="left"> <td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;text-align:left;display:table-cell;width:60px!important;line-height:16px;height:auto;padding:0 0 0 0" align="left" valign="top" class="m_-7822287869295515180left-space-address"> <span style="font-size:14px;font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;font-weight:normal;color:#000000!important">
+<span class="m_-7822287869295515180aBn"> <a class="m_-7822287869295515180aQJ" style="text-decoration:none!important;color:#000000!important">11:18 AM</a> </span> </span> </td>
+            <td style="word-break:break-word;border-collapse:collapse!important;vertical-align:top;text-align:left;display:table-cell;width:197px;line-height:16px;height:auto;padding:0 0px 0 0" align="left" valign="top"> <span style="font-size:14px;font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#000000!important;line-height:16px;text-decoration:none"> LODHA Group Excelus - Mumbai, Mumbai Maharashtra
+India </span> </td> </tr> </tbody> </table> </td> </tr> </tbody></table> </td>
+</tr> </tbody></table> <table cellpadding="0" cellspacing="0" border="0" width="49.5%" align="left" class="m_-7822287869295515180responsive-table"> <tbody><tr> <td class="m_-7822287869295515180fare-break-up" style="padding-right:0px;padding-left:0px"> <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tbody><tr> <td align="center" style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#333333;font-size:16px;padding-bottom:16px;font-weight:bold;border-bottom:1px solid #d7d7d7">Bill Details</td> </tr> <tr> <td bgcolor="#ffffff" class="m_-7822287869295515180base-padding">
+        <table cellspacing="0" cellpadding="0" border="0" width="100%"> <tbody><tr> <td border="0" cellpadding="0" cellspacing="0" valign="top" class="m_-7822287869295515180mobile-wrapper" style="padding-left:7px;padding-right:13px;padding-top:10px"> <table cellpadding="0" cellspacing="0" border="0" width="72%" style="width:72%" align="left"> <tbody><tr> <td> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tbody><tr> <td align="left">
+            <table> <tbody><tr> <td align="left" style="font-family:Arial,Helvetica,'Helvetica Neue',sans-serif;color:#707070;font-size:14px"> Base Fare </td>
+            </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr>
+        </tbody></table> <table cellpadding="0" cellspacing="0" border="0" width="27%" style="width:27%" align="right"> <tbody><tr> <td style="padding:0 0 0 0"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tbody><tr> <td align="left"> <table align="right"> <tbody><tr> <td> ₹41.82 </td> </tr> </tbody></table> </td>
+        </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> <tr>
+            <td style="color:#ffffff;line-height:8px!important;padding:0 0 0 0;font-size:13px" class="m_-7822287869295515180spacing-table"> <img style="width:100%" src="https://ci3.googleusercontent.com/proxy/0mTS44dxiHSQnuqULOF7jUsJLvE7JhypYpDa-jK3SU4T09FBcC3y3SjQy3NNpbeTB8sy1HrxSe55uyxo38F-u8TWhW1-yCJrIoT6fbo=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_White_line"> </td> </tr> </tbody></table> </td>
+    </tr> </tbody></table> </td> </tr> <tr> </tr><tr> </tr><tr> <td bgcolor="#ffffff" class="m_-7822287869295515180fare-break-space">
+    <table cellspacing="0" cellpadding="0" border="0" width="100%"> <tbody><tr> <td border="0" cellpadding="0" cellspacing="0" valign="top" style="padding-top:6px;padding-bottom:6px;padding-left:7px;padding-right:13px;background-color:#f3f3f3" class="m_-7822287869295515180mobile-wrapper">
+        <table cellpadding="0" cellspacing="0" border="0" width="72%" style="width:72%" align="left"> <tbody><tr> <td style="padding:0 0 0 0"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tbody><tr>
+            <td align="left"> <table> <tbody><tr> <td align="left" style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#000000;font-size:14px;font-weight:normal;line-height:18px">
+                Total Fare </td> </tr> </tbody></table> </td> </tr> </tbody></table>
+        </td> </tr> </tbody></table> <table cellpadding="0" cellspacing="0" border="0" width="27%" style="width:27%" align="right"> <tbody><tr> <td style="padding:0 0 0 0"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tbody><tr> <td align="left"> <table align="right"> <tbody><tr>
+        <td style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#000000;font-size:14px;font-weight:normal;line-height:18px"> ₹41.82 </td> </tr> </tbody></table>
+    </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td>
+    </tr> <tr> <td style="color:#ffffff;line-height:8px!important;padding:0 0 0 0;font-size:13px" class="m_-7822287869295515180spacing-table"> <img style="width:100%" src="https://ci3.googleusercontent.com/proxy/0mTS44dxiHSQnuqULOF7jUsJLvE7JhypYpDa-jK3SU4T09FBcC3y3SjQy3NNpbeTB8sy1HrxSe55uyxo38F-u8TWhW1-yCJrIoT6fbo=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_White_line"> </td> </tr> </tbody></table>
+</td> </tr> <tr> </tr><tr> </tr> <tr> <td bgcolor="#ffffff" class="m_-7822287869295515180fare-break-space"> <table cellspacing="0" cellpadding="0" border="0" width="100%"> <tbody><tr> <td border="0" cellpadding="0" cellspacing="0" valign="top" style="padding-left:7px;padding-right:13px" class="m_-7822287869295515180mobile-wrapper"> <table cellpadding="0" cellspacing="0" border="0" width="72%" style="width:72%" align="left"> <tbody><tr>
+    <td style="padding:0 0 0 0"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tbody><tr> <td align="left"> <table>
+        <tbody><tr> <td align="left" style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#707070;font-size:14px;font-weight:normal;line-height:18px"> Taxes </td> </tr>
+        </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table>
+    <table cellpadding="0" cellspacing="0" border="0" width="27%" style="width:27%" align="right"> <tbody><tr> <td style="padding:0 0 0 0"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tbody><tr>
+        <td align="left"> <table align="right"> <tbody><tr> <td style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#707070;font-size:14px;font-weight:normal;line-height:18px">
+            ₹3.18 </td> </tr> </tbody></table> </td> </tr>
+    </tbody></table> </td> </tr> </tbody></table> </td> </tr> <tr> <td style="color:#ffffff;line-height:8px!important;padding:0 0 0 0;font-size:13px" class="m_-7822287869295515180spacing-table">
+    <img style="width:100%" src="https://ci3.googleusercontent.com/proxy/0mTS44dxiHSQnuqULOF7jUsJLvE7JhypYpDa-jK3SU4T09FBcC3y3SjQy3NNpbeTB8sy1HrxSe55uyxo38F-u8TWhW1-yCJrIoT6fbo=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_White_line"> </td> </tr> </tbody></table> </td> </tr> <tr> <td bgcolor="#ffffff" class="m_-7822287869295515180fare-break-space"> <table cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tbody><tr> <td border="0" cellpadding="0" cellspacing="0" valign="top" style="padding-top:7px;padding-bottom:7px;padding-left:7px;padding-right:13px;background-color:#f3f3f3" class="m_-7822287869295515180mobile-wrapper"> <table cellpadding="0" cellspacing="0" border="0" width="72%" style="width:72%" align="left">
+        <tbody><tr> <td style="padding:0 0 0 0"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tbody><tr> <td align="left"> <table>
+            <tbody><tr> <td align="left" style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#000000;font-size:16px;font-weight:bold;line-height:18px"> Total Bill </td>
+                <td align="left" style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#707070;font-size:12px;line-height:18px"> (rounded off) </td> </tr> </tbody></table>
+        </td> </tr> </tbody></table> </td> </tr> </tbody></table>
+        <table cellpadding="0" cellspacing="0" border="0" width="27%" style="width:27%" align="right"> <tbody><tr> <td style="padding:0 0 0 0"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tbody><tr> <td align="left">
+            <table align="right"> <tbody><tr> <td style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#000000;font-size:16px;font-weight:bold;line-height:18px"> ₹45
+            </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td>
+        </tr> </tbody></table> </td> </tr> <tr> <td style="color:#ffffff;line-height:8px!important;padding:0 0 0 0;font-size:13px" class="m_-7822287869295515180spacing-table"> <img style="width:100%" src="https://ci3.googleusercontent.com/proxy/0mTS44dxiHSQnuqULOF7jUsJLvE7JhypYpDa-jK3SU4T09FBcC3y3SjQy3NNpbeTB8sy1HrxSe55uyxo38F-u8TWhW1-yCJrIoT6fbo=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_White_line"> </td> </tr> </tbody></table> </td> </tr> <tr> <td bgcolor="#ffffff" class="m_-7822287869295515180fare-break-space"> <table cellspacing="0" cellpadding="0" border="0" width="100%"> <tbody><tr> <td border="0" cellpadding="0" cellspacing="0" valign="top" style="padding-top:7px;padding-bottom:7px;padding-left:7px;padding-right:13px;background-color:#f3f3f3" class="m_-7822287869295515180mobile-wrapper">
+    <table cellpadding="0" cellspacing="0" border="0" width="72%" style="width:85%" align="left"> <tbody><tr> <td style="padding:0 0 0 0"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tbody><tr>
+        <td align="left"> <table> <tbody><tr> <td align="left" style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#000000;font-size:12px;font-weight:bold;line-height:18px">
+            You saved ₹133.0 on this ride with Ola Share. </td> </tr> </tbody></table> </td> </tr>
+    </tbody></table> </td> </tr> </tbody></table> </td> </tr> <tr>
+    <td style="color:#ffffff;line-height:8px!important;padding:0 0 0 0;font-size:13px" class="m_-7822287869295515180spacing-table"> <img style="width:100%" src="https://ci3.googleusercontent.com/proxy/0mTS44dxiHSQnuqULOF7jUsJLvE7JhypYpDa-jK3SU4T09FBcC3y3SjQy3NNpbeTB8sy1HrxSe55uyxo38F-u8TWhW1-yCJrIoT6fbo=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_White_line"> </td> </tr> <tr> <td bgcolor="#ffffff" class="m_-7822287869295515180fare-break-space">
+    <table cellspacing="0" cellpadding="0" border="0" width="100%"> <tbody><tr> <td border="0" cellpadding="0" cellspacing="0" valign="top" style="padding-left:7px;padding-right:13px" class="m_-7822287869295515180mobile-wrapper"> <table cellpadding="0" cellspacing="0" border="0" width="72%" style="width:72%" align="left"> <tbody><tr> <td style="padding:0 0 0 0"> <table cellpadding="0" cellspacing="0" border="0" width="100%"> <tbody><tr> <td align="left">
+        <table> <tbody><tr> <td align="left" style="font-family:Helvetica,'Helvetica Neue',Arial,sans-serif;color:#707070;font-size:12px;font-weight:normal;line-height:18px"> To download invoice or raise queries,<br> <a style="text-decoration:none;color:#5d93bb" href="http://fapp1.olacabs.com/linktrack/lt.pl?id=24897=dUsCVQEMCFsFTgIJAgIHBwJWVR4=RkMOWxVAE0tRA1YiUVpTDF8WUw1fTgMMAwcHBwZUVVEBBlQCVwFQ&amp;fl=XkNGFUACFkFKAHQCFBFPBXRdDQdaQ01dClUCUwFATAFZWhRGSwp2WUFHQkldQEMRER5XJA1SE0JAFxkAJQgOA0NZUQ0=&amp;ext=dXRtX3NvdXJjZT1zaGFyZV9pbnZvaWNlJmFtcDtsYW5kaW5nX3BhZ2U9YmRldGFpbHMmYW1wO2NhdGVnb3J5PXNoYXJlJmFtcDtib29raW5nX3JlZl9ubz04MDc4Mzc2MzE=" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://fapp1.olacabs.com/linktrack/lt.pl?id%3D24897%3DdUsCVQEMCFsFTgIJAgIHBwJWVR4%3DRkMOWxVAE0tRA1YiUVpTDF8WUw1fTgMMAwcHBwZUVVEBBlQCVwFQ%26fl%3DXkNGFUACFkFKAHQCFBFPBXRdDQdaQ01dClUCUwFATAFZWhRGSwp2WUFHQkldQEMRER5XJA1SE0JAFxkAJQgOA0NZUQ0%3D%26ext%3DdXRtX3NvdXJjZT1zaGFyZV9pbnZvaWNlJmFtcDtsYW5kaW5nX3BhZ2U9YmRldGFpbHMmYW1wO2NhdGVnb3J5PXNoYXJlJmFtcDtib29raW5nX3JlZl9ubz04MDc4Mzc2MzE%3D&amp;source=gmail&amp;ust=1517810749412000&amp;usg=AFQjCNFnnePi1v_zpzsQ_h2zXLvxhnxHbQ">find
+            support for this booking.</a> </td> </tr> </tbody></table> </td> </tr> </tbody></table>
+    </td> </tr> </tbody></table> </td> </tr> <tr> <td style="color:#ffffff;line-height:8px!important;padding:0 0 0 0;font-size:13px" class="m_-7822287869295515180spacing-table"> <img style="width:100%" src="https://ci3.googleusercontent.com/proxy/0mTS44dxiHSQnuqULOF7jUsJLvE7JhypYpDa-jK3SU4T09FBcC3y3SjQy3NNpbeTB8sy1HrxSe55uyxo38F-u8TWhW1-yCJrIoT6fbo=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_White_line"> </td> </tr> </tbody></table> </td> </tr> </tbody></table>
+</td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> <table bgcolor="#eeeeee" border="0" cellpadding="0" cellspacing="0" width="100%"> <tbody><tr> <td bgcolor="#eeeeee" align="center" style="padding:0 15px 0 15px" class="m_-7822287869295515180paymnet-padding"> <table border="0" bgcolor="#ffffff" cellpadding="0" cellspacing="0" width="660" class="m_-7822287869295515180responsive-table"> <tbody><tr> <td bgcolor="#ffffff" align="center" style="padding-left:15px;padding-right:15px"> <table border="0" cellpadding="0" cellspacing="0" width="100%"> <tbody><tr> <td align="center" style="font-family:Arial,Helvetica,'Helvetica Neue',sans-serif;color:#000000;font-size:16px;font-weight:bold;padding-top:30px;padding-bottom:10px;border-bottom:1px solid #eeeeee">
+    Payment </td> </tr> <tr> <td style="color:#ffffff;line-height:14px" class="m_-7822287869295515180spacing-table"> olacabs olacabs olacabs olacabs olacabs olacabs</td> </tr> </tbody></table> </td> </tr> <tr><td bgcolor="#ffffff" class="m_-7822287869295515180mobile-payment-space" style="padding:0px 15px 0 15px"><table cellspacing="0" cellpadding="0" border="0" width="100%"><tbody><tr><td border="0" cellpadding="0" cellspacing="0" valign="top" class="m_-7822287869295515180payment-mobile-wrapper"><table cellpadding="0" cellspacing="0" border="0" width="43%" style="width:43%" align="left" class="m_-7822287869295515180payment-options"><tbody><tr><td style="padding:0 0 0 0"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tbody><tr><td align="right" class="m_-7822287869295515180payment-right"><table><tbody><tr><td width="30" style="width:30px"><img style="float:none;display:inline;width:20px" width="20" src="https://ci6.googleusercontent.com/proxy/Buw2z905C9g4GBhJlvUqCY3lita0FspTabTlTG-EkMQDMMA9jrmqEE-NNrlqFGXVq5IfJTnrwPeohO_hriXJCzbZZP111L6YvOv3sg=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_ola_money" alt=""></td><td align="left" style="font-family:Arial,Helvetica,'Helvetica Neue',sans-serif;color:#707070;font-size:14px">Paid by Ola Money</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table cellpadding="0" cellspacing="0" border="0" width="27%" style="width:27%" align="right" class="m_-7822287869295515180payment-amount"><tbody><tr><td style="padding:0 0 0 0" class="m_-7822287869295515180payment-amount"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tbody><tr><td align="left" style="font-family:Arial,Helvetica,'Helvetica Neue',sans-serif;color:#707070;font-size:14px;padding-top:7px">₹ 45.00</td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td style="color:#ffffff;line-height:10px" class="m_-7822287869295515180spacing-table"><img src="https://ci3.googleusercontent.com/proxy/0mTS44dxiHSQnuqULOF7jUsJLvE7JhypYpDa-jK3SU4T09FBcC3y3SjQy3NNpbeTB8sy1HrxSe55uyxo38F-u8TWhW1-yCJrIoT6fbo=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_White_line" style="width:100%"></td></tr></tbody></table></td></tr> </tbody></table> </td> </tr> </tbody></table> </div> <table bgcolor="#eeeeee" border="0" cellpadding="0" cellspacing="0" width="100%"> <tbody><tr> <td bgcolor="#eeeeee" style="padding-top:10px;padding-left:15px;padding-right:15px" align="center" class="m_-7822287869295515180earn-spacing"> <table border="0" cellpadding="0" cellspacing="0" width="660" class="m_-7822287869295515180responsive-table" style="border-radius:4px"> <tbody><tr> <td align="center"> <table cellspacing="0" cellpadding="0" border="0" width="100%"> <tbody><tr> <td align="center" style="text-align:center;float:none"> <table width="100%" border="0" cellspacing="0" cellpadding="0" style="text-align:center;float:none"> <tbody><tr>
+    <td align="center" style="text-align:center;padding-top:0px;background-image:url('https://ci6.googleusercontent.com/proxy/Xn35k8YvT5d4ppEVgT2SBA2_xX4LzSWCj2Rd8sff64PdS0FaByC7MuJZeNAJwDocR1ry9s0MKjA4NPgGKDhfpa-XaW8fKWk=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_line');background-position:center 40%;background-repeat:no-repeat" class="m_-7822287869295515180icon-spacing m_-7822287869295515180footer-add"> <table align="center" style="text-align:center" bgcolor="#eeeeee"> <tbody><tr> </tr> </tbody></table> </td> </tr> <tr> <td style="color:#eeeeee;line-height:6px" class="m_-7822287869295515180spacing-table">
+    <img src="https://ci4.googleusercontent.com/proxy/jAhzw58k5LV8wwjb7W8F_QTyOSjwAvlY0RLt0NQ4Wwn0JS3PUIvN2YuTKI4GvpTtuLGYoY3DulykfaNgPdoyEFoFtjKWJHcQJiPSfw=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Invoice_Grey_line" style="width:100%"> </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> <table border="0" cellpadding="0" cellspacing="0" width="100%"> <tbody><tr> <td bgcolor="#EEEEEE" align="center" style="padding-top:20px;padding-bottom:20px;padding-left:15px;padding-right:15px"> <table border="0" cellpadding="0" cellspacing="0" width="660" class="m_-7822287869295515180responsive-table"> <tbody><tr> <td bgcolor="#ffffff" style="border-radius:4px"> <table width="100%" border="0" cellspacing="0" cellpadding="0"> <tbody><tr> <td><img src="https://ci3.googleusercontent.com/proxy/tT93mE2f6yoBl8Q0jL8jH8dSAxku92eL4V2PHkeeczqNC-eWgxWHe4wlwW-T2WM_2i1g-nWLchP4uF-PuaeHOpNdin4dBBbaiUXR9kigCmG1klrAyqjDUg=s0-d-e1-ft#http://d2xfkvgwru9u2c.cloudfront.net/Share-Pass-Invoice-Footer.jpg" alt="" usemap="#m_-7822287869295515180_Map" width="100%">
+    <map name="m_-7822287869295515180_Map" id="m_-7822287869295515180Map"> <area alt="" title="" href="http://fapp1.olacabs.com/linktrack/lt.pl?id=24897=dUsCVQEMCFsFTgIJAgIHBwJWVR4=RkMOWxVAE0tRA1YiUVpTDF8WUw1fTgMMAwcHBwZUVVEBBlQCVwFQ&amp;fl=XkNGFQkXHwNWHFNJQVNbVkBIBg1bHAJCDxsXA0xSBg==&amp;ext=cmU9MSZzdD0yNTU4MTczODQ0MTAmaD0xNGY4ZmRlOTk4Yzc2Nzg1MGFkMzZiYTExYjI3MGFkYTYxMTZkZTJj" shape="rect" coords="235,358,426,394" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://fapp1.olacabs.com/linktrack/lt.pl?id%3D24897%3DdUsCVQEMCFsFTgIJAgIHBwJWVR4%3DRkMOWxVAE0tRA1YiUVpTDF8WUw1fTgMMAwcHBwZUVVEBBlQCVwFQ%26fl%3DXkNGFQkXHwNWHFNJQVNbVkBIBg1bHAJCDxsXA0xSBg%3D%3D%26ext%3DcmU9MSZzdD0yNTU4MTczODQ0MTAmaD0xNGY4ZmRlOTk4Yzc2Nzg1MGFkMzZiYTExYjI3MGFkYTYxMTZkZTJj&amp;source=gmail&amp;ust=1517810749412000&amp;usg=AFQjCNEtIpHU4qIGw9EgUH0HrQ28xXIgAg"> </map> </td></tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> <p>&nbsp;<br></p> <img src="https://ci6.googleusercontent.com/proxy/z30UCtHuX7PzDrs8_0bLReWy-Hyk8UwiQp9wIUopRjUm1CDs0x7qc3gjpGk_sYP_hGdo6RA5XaG_l6QZjyujnEi4_fkLhKdbQ_82FLIta2cGAIkLZSJF5_EX40-MzL_aibIvsR7UC-0lA_q7mlaUZfrKGKsWtBKlFVM1veW3DLn6sA-DQD2HV3hck500m4vDdFcn-cTRmpfj=s0-d-e1-ft#http://fapp1.olacabs.com/linktrack/lt.pl?id=24897=eUsCVQEMCFsFTgIJAgIHBwJWVR4=RkMOWxVAE0tRA1YiUVpTDF8WUw1fTgMMAwcHBwZUVVEBBlQCVwFQ">
+</font></div></td></tr></tbody></table></td></tr></tbody></table></div></div><script type="text/javascript" nonce="">// <![CDATA[
+document.body.onload=function(){};
+// ]]></script></body>
+</html>
